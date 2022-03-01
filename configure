@@ -29,6 +29,7 @@ cmake ../libs \
   -DCMAKE_POSITION_INDEPENDENT_CODE:bool=ON
 ${MAKE}
 
+${R_HOME}/bin${R_ARCH_BIN}/R -q -e "library('Rcpp');library('TMB');library('RcppEigen');Rcpp::compileAttributes();"
 
 cmake --build _builds --target install --config Release
 
