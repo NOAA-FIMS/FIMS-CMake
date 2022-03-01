@@ -10,7 +10,7 @@ cmake -H. -B_builds \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=_install \
     -DCMAKE_SHARED_LIBRARY_PREFIX_CXX=""
-    -DMACOSX_RPATH
+ 
 
 : ${R_HOME=`R RHOME`}
 if test -z "${R_HOME}"; then
@@ -28,9 +28,10 @@ cmake ../libs \
   -DCMAKE_BUILD_TYPE=Release \
   -DBUILD_SHARED_LIBS:bool=OFF \
   -DCMAKE_POSITION_INDEPENDENT_CODE:bool=ON
+${R_HOME}/bin${R_ARCH_BIN}/R -q -e "library('Rcpp');library('TMB');library('RcppEigen');Rcpp::compileAttributes();"
 ${MAKE}
 
-${R_HOME}/bin${R_ARCH_BIN}/R -q -e "library('Rcpp');library('TMB');library('RcppEigen');Rcpp::compileAttributes();"
+
 
 cmake --build _builds --target install --config Release
 
