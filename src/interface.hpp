@@ -6,7 +6,7 @@
  */
 
 
-//#define TMB_MODEL
+#define TMB_MODEL
 
 
 //traits for interfacing with TMB
