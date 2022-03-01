@@ -14,7 +14,7 @@ cmake -H. -B_builds \
 cmake --build _builds --target install --config Release
 
 # Linux
-cp _install/lib/ModularTMBExample.so src/ || echo "Failed: ModularTMBExample.so -> src"
+cp _install/lib/FIMSCMake src/ || echo "Failed: FIMSCMake -> src"
 
 # Mac
-cp _install/lib/ModularTMBExample.dylib src/ModularTMBExample.so || echo "Failed: ModularTMBExample.dylib -> src"
+cp _install/lib/FIMSCmake.dylib src/FIMS-CMake || echo "Failed: FIMSCmake.dylib -> src"
