@@ -1,0 +1,20 @@
+set -x
+set -e
+
+which cmake
+
+rm -rf _builds
+
+cmake -H. -B_builds \
+    -DCMAKE_VERBOSE_MAKEFILE=ON \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=_install \
+    -DCMAKE_SHARED_LIBRARY_PREFIX_CXX=""
+
+cmake --build _builds --target install --config Release
+
+# Linux
+cp _install/lib/ModularTMBExample.so src/ || echo "Failed: ModularTMBExample.so -> src"
+
+# Mac
+cp _install/lib/ModularTMBExample.dylib src/ModularTMBExample.so || echo "Failed: ModularTMBExample.dylib -> src"
