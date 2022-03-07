@@ -25,8 +25,7 @@ LDFLAGS=`"${R_HOME}/bin/R" CMD config LDFLAGS`
 
 cd src
 mkdir build && cd build
-cmake ../
-  -DCMAKE_POSITION_INDEPENDENT_CODE:bool=ON
+cmake ..
 
 
 ${MAKE}
