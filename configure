@@ -35,7 +35,7 @@ cd ..
 cmake --build builds --target install --config Release
 
 # Linux
-cp src/FIMSCMake.so libs/src/FIMSCMake.so || echo "Failed: FIMSCMake.so -> src"
+cp src/builds/FIMSCMake.so libs/src/FIMSCMake.so || echo "Failed: FIMSCMake.so -> src"
 
 # Mac
-cp src/libFIMSCmake.dylib libs/FIMS-CMake.so || echo "Failed: FIMSCmake.dylib -> src"
+cp src/builds/libFIMSCmake.dylib libs/FIMS-CMake.so || echo "Failed: FIMSCmake.dylib -> src"
