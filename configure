@@ -26,7 +26,6 @@ LDFLAGS=`"${R_HOME}/bin/R" CMD config LDFLAGS`
 cd src
 mkdir build && cd build
 cmake ../
-  -DCMAKE_BUILD_TYPE=Release \
   -DBUILD_SHARED_LIBS:bool=OFF \
   -DCMAKE_POSITION_INDEPENDENT_CODE:bool=ON
 
