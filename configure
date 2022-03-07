@@ -30,7 +30,7 @@ cmake ..
 
 ${MAKE}
 
-
+cd ..
 
 cmake --build builds --target install --config Release
 
