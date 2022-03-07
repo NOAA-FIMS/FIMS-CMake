@@ -93,6 +93,6 @@ generate_export_header(FIMSCmake)
 
 install(TARGETS FIMSCmake DESTINATION lib)
 
-MESSAGE("TARGETS is ${TARGETS}")
+
 target_link_libraries(FIMSCmake R)
 
