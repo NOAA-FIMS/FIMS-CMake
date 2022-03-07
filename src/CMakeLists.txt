@@ -95,6 +95,6 @@ install(TARGETS FIMSCmake DESTINATION lib)
 
 MESSAGE("TARGETS is ${TARGETS}")
 target_link_libraries(FIMSCmake R)
-target_link_libraries(FIMSCmake Rcpp)
-target_link_libraries(FIMSCmake TMB)
+#target_link_libraries(FIMSCmake Rcpp)
+#target_link_libraries(FIMSCmake TMB)
 
