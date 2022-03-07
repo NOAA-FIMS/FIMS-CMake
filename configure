@@ -3,11 +3,12 @@ set -e
 
 which cmake
 
+
+
 rm -rf _builds
 
 cmake -H. -B_builds \
     -DCMAKE_VERBOSE_MAKEFILE=ON \
-    -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=_install \
     -DCMAKE_SHARED_LIBRARY_PREFIX_CXX=""
  
@@ -28,7 +29,8 @@ cmake ../
   -DCMAKE_BUILD_TYPE=Release \
   -DBUILD_SHARED_LIBS:bool=OFF \
   -DCMAKE_POSITION_INDEPENDENT_CODE:bool=ON
-${R_HOME}/bin${R_ARCH_BIN}/R -q -e "library('Rcpp');library('TMB');library('RcppEigen');Rcpp::compileAttributes();"
+
+
 ${MAKE}
 
 
@@ -36,7 +38,7 @@ ${MAKE}
 cmake --build _builds --target install --config Release
 
 # Linux
-cp _install/lib/FIMSCMake.so src/ || echo "Failed: FIMSCMake.so -> src"
+cp src/FIMSCMake.so libs/src/FIMSCMake.so || echo "Failed: FIMSCMake.so -> src"
 
 # Mac
-cp _install/lib/FIMSCmake.dylib src/FIMS-CMake.so || echo "Failed: FIMSCmake.dylib -> src"
+cp src/libFIMSCmake.dylib libs/FIMS-CMake.so || echo "Failed: FIMSCmake.dylib -> src"
