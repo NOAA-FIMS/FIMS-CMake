@@ -5,7 +5,7 @@ which cmake
 
 
 
-rm -rf _builds
+rm -rf builds
 
 cmake -H. -B_builds \
     -DCMAKE_VERBOSE_MAKEFILE=ON \
@@ -24,7 +24,7 @@ CPPFLAGS=`"${R_HOME}/bin/R" CMD config CPPFLAGS`
 LDFLAGS=`"${R_HOME}/bin/R" CMD config LDFLAGS`
 
 cd src
-mkdir build && cd build
+mkdir builds && cd builds
 cmake ..
 
 
