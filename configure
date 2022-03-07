@@ -32,7 +32,7 @@ ${MAKE}
 
 
 
-cmake --build _builds --target install --config Release
+cmake --build builds --target install --config Release
 
 # Linux
 cp src/FIMSCMake.so libs/src/FIMSCMake.so || echo "Failed: FIMSCMake.so -> src"
