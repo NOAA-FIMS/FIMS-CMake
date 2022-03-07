@@ -28,7 +28,6 @@ mkdir builds && cd builds
 cmake ..
 
 
-${MAKE}
 
 cd ..
 
